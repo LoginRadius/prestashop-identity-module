@@ -1,0 +1,25 @@
+#sociallogin_userprofile_table th {
+    text-align: left;
+    font: 400 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    text-transform: none;
+    background-color: #f1f1f1;
+    background-image: -ms-linear-gradient(top, #f9f9f9, #ececec);
+    background-image: -moz-linear-gradient(top, #f9f9f9, #ececec);
+    background-image: -o-linear-gradient(top, #f9f9f9, #ececec);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ececec));
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #ececec);
+    background-image: linear-gradient(top, #f9f9f9, #ececec);
+    color: #000;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bebfb9;
+    padding: 3px 10px;
+    min-width: 70px;
+}
+
+#sociallogin_userprofile_table {
+    table-layout: fixed;
+    border-color: #dfdfdf;
+    background-color: #f9f9f9;
+    word-break: break-all;
+}

@@ -1,0 +1,64 @@
+div#sharehorizontal label img {
+    vertical-align: middle;
+}
+
+#sharehorizontal label {
+    margin: 12px 10px 0 0;
+    float: left;
+    text-align: left;
+}
+
+div#sharehorizontal input {
+    margin-right: 6px;
+}
+
+#hybrid-horizontal-horizontal {
+    margin-right: 9px !important;
+}
+
+#sharevertical label {
+    width: auto !important;
+}
+
+.row_white.shareprovider > td, .row_white.verticalshareprovider > td {
+    float: left;
+    width: 154px;
+    margin-bottom: 0px !important;
+    padding: 4px 17px 2px 4px !important;
+}
+
+.radio.sharevertical {
+    float: left;
+    margin-bottom: 0px !important;
+    padding: 4px 17px 2px 4px !important;
+}
+
+div#sharevertical input {
+    margin-right: 2px;
+}
+
+div#sharevertical img {
+    vertical-align: top;
+}
+
+#sharevertical {
+    margin-top: 12px;
+}
+
+.row_white.counterprovider > td, .row_white.verticalcounterprovider > td {
+    float: left;
+    width: 225px;
+    margin-bottom: 0px !important;
+    padding: 4px 17px 2px 4px !important;
+}
+
+table#shareprovider tr td input, table#verticalshareprovider tr td input, table.form-table tr td input {
+    margin-right: 2px;
+}
+
+#sortable li, #verticalsortable li {
+    float: left !important;
+}
+.loginradiusadvancemodule textarea{
+    resize: both !important;
+}
