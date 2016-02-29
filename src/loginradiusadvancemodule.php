@@ -38,7 +38,7 @@ class LoginRadiusAdvanceModule extends Module
     {
         $this->name = 'loginradiusadvancemodule';
         $this->tab = 'others';
-        $this->version = '1.0.1';
+        $this->version = '1.0.2';
         $this->author = 'LoginRadius';
         $this->bootstrap = true;
         $this->need_instance = 0;

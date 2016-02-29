@@ -2,7 +2,7 @@
 <module>
 	<name>loginradiusadvancemodule</name>
 	<displayName><![CDATA[Advanced Customer Registration and Management]]></displayName>
-	<version><![CDATA[1.0.1]]></version>
+	<version><![CDATA[1.0.2]]></version>
 	<description><![CDATA[This module enables customer registration and management for your prestashop website.]]></description>
 	<author><![CDATA[LoginRadius]]></author>
 	<tab><![CDATA[others]]></tab>

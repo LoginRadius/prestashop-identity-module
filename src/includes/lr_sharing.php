@@ -136,6 +136,8 @@ function loginRadiusHorizontalShareScript()
         $mobileFriendly= Configuration::get('lr_enable_mobile_friendly');
         if ($mobileFriendly == 1) {
             $mobileFriendly = 'true';
+        } else if($mobileFriendly == 0) {
+            $mobileFriendly = 'false';
         }
         $loginradius_apikey = trim(Configuration::get('lr_api_key'));
         $sharecounttype = (!empty($loginradius_apikey) ? ('$u.apikey="' . $loginradius_apikey . '";

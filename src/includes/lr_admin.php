@@ -874,10 +874,13 @@ function loginRadiusModuleSettingsValidate()
     $obj = new LoginRadius();
     $loginradius_api_key = trim(Tools::getValue('lr_api_key'));
     $loginradius_api_secret = trim(Tools::getValue('lr_api_secret'));
+    $loginradius_app_name = trim(Tools::getValue('lr_site_name'));
     $empty_api_credentials = $module->l('LoginRadius API Key or Secret is invalid. Get your LoginRadius API key from ', 'sociallogin_settings_validation') . "<a href='http://www.loginradius.com' target='_blank'>LoginRadius</a>";
-
+    $empty_app_name = $module->l('Please Enter LoginRadius App name');
     if (empty($loginradius_api_key) || empty($loginradius_api_secret)) {
         return $empty_api_credentials;
+    } elseif(empty($loginradius_app_name)) {
+        return $empty_app_name;
     }
 
     $validateurl = 'https://' . LR_DOMAIN . '/api/v2/app/validate?apikey=' . rawurlencode($loginradius_api_key) . '&apisecret=' . rawurlencode($loginradius_api_secret);
@@ -892,16 +895,18 @@ function loginRadiusModuleSettingsValidate()
             $error = array(
                 'API_KEY_NOT_FORMATED' => $module->l('LoginRadius API key is invalid. Get your LoginRadius API key from ', 'sociallogin_settings_validation') . "<a href='http://www.loginradius.com' target='_blank'>LoginRadius</a>",
                 'API_SECRET_NOT_VALID' => $module->l('LoginRadius API Secret is invalid. Get your LoginRadius API Secret from ', 'sociallogin_settings_validation') . "<a href='http://www.loginradius.com' target='_blank'>LoginRadius</a>",
-                'lr_api_key_NOT_FORMATED' => $module->l('LoginRadius API Key is not formatted correctly', 'sociallogin_settings_validation'),
+                'API_KEY_NOT_VALID' => $module->l('LoginRadius API Key is not formatted correctly', 'sociallogin_settings_validation'),
                 'API_SECRET_NOT_FORMATED' => $module->l('LoginRadius API Secret is not formatted correctly', 'sociallogin_settings_validation'),
             );
-//var_dump($result);die;
+
             foreach ($result->Messages as $value) {
+               
                 return $error[$value];
             }
         }
     } catch (LoginRadiusException $e) {
-        return '';
+        
+        return $e;
     }
 }
 
@@ -942,14 +947,16 @@ function loginRadiusSaveModuleSettings()
         }
     }
     $result = loginRadiusModuleSettingsValidate();
-
+    
     if ($result) {
+        
         return $module->displayError($result);
     } else {
         Configuration::updateValue('lr_api_key', trim(Tools::getValue('lr_api_key')));
         Configuration::updateValue('lr_api_secret', trim(Tools::getValue('lr_api_secret')));
         loginRadiusUpdateModuleSettings($settings);
         $html .= $module->displayConfirmation($module->l('Settings updated.', 'lr_admin'));
+        
         return $html;
     }
 }

@@ -24,6 +24,10 @@ Step by steps instructions:
 > **Note**: the full functionality of this plugin requires a LoginRadius Site Name, LoginRadius API Key and a LoginRadius API Secret. If you do not have this data only the functionality of the Social Sharing component can be utilized. Please find further documentation on how you can obtain this data [here](http://ish.re/INI1).
 
 == Changelog ==
+= 1.0.2 =
+
+* Added LoginRadius Api key and Secret Key Validation.
+
 = 1.0.1 =
 
 * Added email verification options during registration i.e Required, Optional, Disable.
